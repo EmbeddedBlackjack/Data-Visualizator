@@ -26,5 +26,7 @@ buildNumber.properties
 .project
 .vscode/
 
-# Others
-node_modules
+#
+# jtablesaw/tablesaw-jsplot Plots
+#
+testoutput/
