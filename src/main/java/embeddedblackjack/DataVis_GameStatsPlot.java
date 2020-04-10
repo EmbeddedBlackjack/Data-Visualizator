@@ -37,14 +37,17 @@ public class DataVis_GameStatsPlot {
         HistogramTrace trace10 = HistogramTrace.builder(tmp).build();
         HistogramTrace trace11 = HistogramTrace.builder(tmp).build();
         for (int i=0; i<12; i++) {
+            // Set csv data location
             String csv_file = csv_data_path + ("player0_" + i + ".csv");
 
+            // Set csv data properties
             CsvReadOptions.Builder builder =
                     CsvReadOptions.builder(csv_file)
                             .separator(',')         // table is comma-delimited
                             .header(true);          // header is first row
             CsvReadOptions options = builder.build();
 
+            // Read csv data file
             Table game_results = Table.read().usingOptions(options);
             DoubleColumn col = game_results.doubleColumn("profit");
             int col_size = col.size();
@@ -53,6 +56,7 @@ public class DataVis_GameStatsPlot {
                 dcol[cnt] = col.getDouble(cnt); 
             }
 
+            // Fit data to Histogram
             switch(i) {
                 case 0: trace0 = HistogramTrace.builder(dcol).opacity(0.75).build(); break;
                 case 1: trace1 = HistogramTrace.builder(dcol).opacity(0.75).build(); break;
