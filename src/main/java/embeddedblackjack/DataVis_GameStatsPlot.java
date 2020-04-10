@@ -18,16 +18,19 @@ public class DataVis_GameStatsPlot {
         String sim_path = "C:\\Users\\munis\\Documents\\_code\\EmbeddedBlackjack\\Blackjack-Simulator\\";
         String csv_data_path = sim_path + "data_out_stat\\";
 
-        String csv_file = csv_data_path + "player0_0.csv";
+        // Plot data as Histogram
+        for (int i=0; i<12; i++) {
+            String csv_file = csv_data_path + ("player0_" + i + ".csv");
 
-        CsvReadOptions.Builder builder =
-                CsvReadOptions.builder(csv_file)
-                        .separator(',')         // table is comma-delimited
-                        .header(true);          // header is first row
+            CsvReadOptions.Builder builder =
+                    CsvReadOptions.builder(csv_file)
+                            .separator(',')         // table is comma-delimited
+                            .header(true);          // header is first row
+            CsvReadOptions options = builder.build();
 
-        CsvReadOptions options = builder.build();
+            Table game_results = Table.read().usingOptions(options);
+    	    Plot.show(Histogram.create("Player0-" + i + " profit distribution", game_results, "profit"));
+        }
 
-        Table game_results = Table.read().usingOptions(options);
-    	Plot.show(Histogram.create("Player0 profit distribution", game_results, "profit"));
     }
 }
