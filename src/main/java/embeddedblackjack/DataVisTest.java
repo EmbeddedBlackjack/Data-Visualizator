@@ -5,7 +5,7 @@ import tech.tablesaw.api.DoubleColumn;
 /**
  * Hello world!
  */
-public class App {
+public class DataVisTest {
 
     /**
      * Says hello to the world and more tests...
