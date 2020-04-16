@@ -76,6 +76,7 @@ public class DataVis_GameStatsPlot {
         }
 
         // Generate plot in plot.ly web page ------------------------
+        // make html file with js code
         Layout layout = Layout.builder()
             .barMode(Layout.BarMode.OVERLAY)
             .build();
