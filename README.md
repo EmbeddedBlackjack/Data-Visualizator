@@ -1,8 +1,6 @@
 # Data-Visualizator
-Java graphics and real-time plotting for data from blackjack simulator, and maybe others
+Javascript graphics and real-time plotting for data from blackjack simulator, and maybe others
 
-## Java packages in use
-* jtablesaw - graphics / web graphics - (https://github.com/jtablesaw/tablesaw)
+## Javascrpt packages in use
+* plotly - graphics / web graphics - (https://github.com/plotly/plotly.js)
 
-## Other Java packages not in use, but could be...
-* smile - machine learning / graphics - (https://github.com/haifengl/smile)
